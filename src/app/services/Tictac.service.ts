@@ -7,7 +7,17 @@ import { Tictac } from "../game/model/Tictac";
 export class TictacService{
     tictac=new Tictac();
 
-    getBoard():Number[][]{
+    getBoard():number[][]{
         return [...this.tictac.getBoard()];
+    }
+
+    makeMove(row:number, col:number){
+        this.tictac.makeMove(row,col);
+    }
+    isGameOver(){
+        return this.tictac.isGameOver();
+    }
+    getWinner(){
+        return this.tictac.getWinner();
     }
 }

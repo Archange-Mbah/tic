@@ -12,7 +12,9 @@ import { CommonModule } from '@angular/common';
 })
 export class GameComponent {
 
-  board!:Number[][];
+  isGameOver:boolean=false;
+  board!:number[][];
+  winner!:number;
 
   constructor(private tictacService:TictacService){
   }
@@ -32,7 +34,7 @@ export class GameComponent {
     console.log("exit");
   }
 
-  play(cell:Number){
+  play(cell:number){
     if(cell==0){
       return '';
     }
@@ -42,5 +44,14 @@ export class GameComponent {
     else{
       return 'O';
     }
+  }
+  makeMove(row:number,col:number){
+    this.tictacService.makeMove(row,col);
+    this.board=this.tictacService.getBoard();
+    if(this.tictacService.isGameOver()){
+      this.winner=this.tictacService.getWinner();
+      this.isGameOver=true;
+    }
+   
   }
 }

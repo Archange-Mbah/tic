@@ -1,3 +1,9 @@
+@if(isGameOver){
+    <h1>Game Over</h1>
+    <h2>player{{winner}} Wins!</h2>
+
+}
+@else{
 <div class="board">
     <div class="row" *ngFor="let row of board; let i = index">
         <div class="cell" *ngFor="let cell of row; let j = index" (click)="makeMove(i, j)">
@@ -5,5 +11,6 @@
         </div>
     </div>
 </div>
+}
 
  
