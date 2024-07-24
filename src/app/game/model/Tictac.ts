@@ -10,9 +10,12 @@ export class Tictac{
     }
 
     makeMove(row:number, col:number){
-        if(this.board[row][col] == 0){
+        if(this.board[row][col] == 0 && !this.isGameOver() && !this.draw())  {
             this.board[row][col] = this.turn;
             this.turn = this.turn == 1 ? 2 : 1;
+        }
+        if(!this.isGameOver() && this.turn == 2){
+            this.randomMove();
         }
     }
 
@@ -41,5 +44,25 @@ export class Tictac{
 
     getWinner(){
         return this.turn == 1 ? 2 : 1;
+}
+
+ private randomMove(){
+        let row:number = Math.floor(Math.random() * 3);
+        let col:number = Math.floor(Math.random() * 3);
+        if(this.board[row][col] == 0){
+            this.makeMove(row, col);
+        }else{
+            this.randomMove();
+        }
+ }
+ draw(){
+    for(let i=0; i<3; i++){
+        for(let j=0; j<3; j++){
+            if(this.board[i][j] == 0){
+                return false;
+            }
+        }
+    }
+    return true;        
 }
 }

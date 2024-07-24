@@ -54,4 +54,7 @@ export class GameComponent {
     }
    
   }
+  isDraw(){
+    return this.tictacService.getDraw();
+  }
 }

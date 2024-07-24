@@ -20,4 +20,7 @@ export class TictacService{
     getWinner(){
         return this.tictac.getWinner();
     }
+    getDraw(){
+        return this.tictac.draw();
+    }
 }

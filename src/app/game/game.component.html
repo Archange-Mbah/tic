@@ -3,11 +3,23 @@
     <h2>player{{winner}} Wins!</h2>
 
 }
+@else if(isDraw()){
+    <h1>Game Over</h1>
+    <h2>It's a Draw!</h2>
+}
 @else{
 <div class="board">
     <div class="row" *ngFor="let row of board; let i = index">
         <div class="cell" *ngFor="let cell of row; let j = index" (click)="makeMove(i, j)">
-            {{board[i][j]}}
+            @if(board[i][j]==1){
+                <img src="https://i.pinimg.com/564x/c9/e7/89/c9e789ae5c832e8116f4a675618053c6.jpg" alt="X">
+            }
+            @else if(board[i][j]==2){
+                <img src="https://i.pinimg.com/564x/c1/5b/09/c15b09f4645c148c65bf26239f3e20da.jpg" alt="O">
+            }
+            @else {
+                <img src="https://i.pinimg.com/736x/e3/ac/f2/e3acf2330382103f78f493a4978eda60.jpg" alt=" ">
+            }
         </div>
     </div>
 </div>
