@@ -1,18 +1,15 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-  }
+
   .container {
+    height: 100vh;
     text-align: center;
+    background-image: url(https://i.pinimg.com/564x/56/41/12/5641127c10a282b9b29e5f3678a77f95.jpg);
+    background-size: cover;
+    
   }
   h1 {
-    margin-top: 20%;
+    margin: top 0;
     font-size: 2.5em;
+    color:whitesmoke;
   }
   .tic, .tac, .toe {
     display: inline-block;
@@ -66,4 +63,9 @@ body {
       top: 0;
       opacity: 1;
     }
+  }
+   button:hover{
+    cursor: pointer;
+    background-color: brown;
+    width: 100px;
   }
