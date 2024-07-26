@@ -23,4 +23,7 @@ export class TictacService{
     getDraw(){
         return this.tictac.draw();
     }
+    reset(){
+        this.tictac=new Tictac();
+    }
 }

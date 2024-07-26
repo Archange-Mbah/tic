@@ -28,7 +28,108 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 900px;
+    height: 650px;
     background-image: url("https://i.pinimg.com/564x/18/a4/65/18a465e3390622efc1f18b413b5a58d7.jpg");
-    background-repeat: none;
+    background-size: cover;
 }
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #e9e9e9;
+    background-image:url(https://i.pinimg.com/564x/84/4c/8e/844c8e710a5b94b7ef68294b20028051.jpg) ;
+}
+.winner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 50px;
+   
+    
+    img{
+        width:50%;
+        height: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+      height: 100vh;
+      text-align: center;
+      background-image: url(https://i.pinimg.com/564x/56/41/12/5641127c10a282b9b29e5f3678a77f95.jpg);
+      background-size: center;
+    }
+    h1 {
+      margin: top 0;
+      font-size: 2.5em;
+      color:whitesmoke;
+    }
+    .tic, .tac, .toe {
+      display: inline-block;
+    }
+  }
+
+ @media (max-width:576px){
+    .row{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100px;
+       }
+    .cell{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        font-size: 50px;
+        border: 1px solid black;
+        background-color: #e9e9e9;
+        cursor: pointer;
+        img{
+            width: 100px;
+            height: 100px;
+        
+        }
+    }
+    .board{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 600px;
+        background-image: url("https://i.pinimg.com/564x/18/a4/65/18a465e3390622efc1f18b413b5a58d7.jpg");
+        background-repeat: none;
+        background-size: cover;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        color: #e9e9e9;
+        background-image:url(https://i.pinimg.com/564x/84/4c/8e/844c8e710a5b94b7ef68294b20028051.jpg) ;
+    }
+    .winner{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        font-size: 25px;
+       
+        
+        img{
+            width:50%;
+            height: 50%;
+        }
+    }
+ }

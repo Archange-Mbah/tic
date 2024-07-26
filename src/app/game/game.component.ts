@@ -1,6 +1,7 @@
 import { Component ,OnInit } from '@angular/core';
 import{TictacService} from '../services/Tictac.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class GameComponent {
   board!:number[][];
   winner!:number;
 
-  constructor(private tictacService:TictacService){
+  constructor(private tictacService:TictacService,private router:Router) {
   }
   ngOnInit(){
     this.board=this.tictacService.getBoard();
@@ -25,7 +26,10 @@ export class GameComponent {
     console.log(row,col);
   }
   onReset(){
-    console.log("reset");
+    this.tictacService.reset();
+    this.board=this.tictacService.getBoard();
+    this.isGameOver=false
+
   }
   onNewGame(){
     console.log("new game");
@@ -57,4 +61,6 @@ export class GameComponent {
   isDraw(){
     return this.tictacService.getDraw();
   }
+  
+  
 }
